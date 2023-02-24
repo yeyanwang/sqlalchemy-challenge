@@ -45,11 +45,11 @@ def homepage():
     return """ <h1> Welcome to Honolulu, Hawaii Climate API! </h1>
     <h3> The available routes are: </h3>
     <ul>
-    <li><a href = "/api/v1.0/precipitation"> Precipitation</a>: /api/v1.0/precipitation </li>
-    <li><a href = "/api/v1.0/stations"> Stations </a>: /api/v1.0/stations</li>
-    <li><a href = "/api/v1.0/tobs"> TOBS </a>: /api/v1.0/tobs</li>
-    <li>Minimum, average, and maximum temperatures for a specific start date (the start date should be in the yyyy-mm-dd format): /api/v1.0/&ltstart&gt</li>
-    <li>Minimum, average, and maximum temperatures for a specific start-end range(the start and end dates should be in the yyyy-mm-dd format): /api/v1.0/&ltstart&gt/&ltend&gt</li>
+    <li><a href = "/api/v1.0/precipitation"> Precipitation</a>: <strong>/api/v1.0/precipitation</strong> </li>
+    <li><a href = "/api/v1.0/stations"> Stations </a>: <strong>/api/v1.0/stations</strong></li>
+    <li><a href = "/api/v1.0/tobs"> TOBS </a>: <strong>/api/v1.0/tobs</strong></li>
+    <li>To retrieve the minimum, average, and maximum temperatures for a specific start date, use <strong>/api/v1.0/&ltstart&gt</strong> (replace start date in yyyy-mm-dd format)</li>
+    <li>To retrieve the minimum, average, and maximum temperatures for a specific start-end range, use <strong>/api/v1.0/&ltstart&gt/&ltend&gt</strong> (replace start and end date in yyyy-mm-dd format)</li>
     </ul>
     """
 
