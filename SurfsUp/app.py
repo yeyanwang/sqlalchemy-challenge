@@ -121,14 +121,17 @@ def tobs():
 # Define what to do when the user hits the URL with a specific start date or start-end range
 @app.route("/api/v1.0/<start>")
 @app.route("/api/v1.0/<start>/<end>")
-def cal_temp(start, end=None):
+def cal_temp(start=None, end=None):
     # Create the session
     session = Session(engine)
     
+    # Make a list for the minimum, average and maximum temperature
+    sel=[func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)]
+    
     # Check if there is an end date then do the task accordingly
     if end == None: 
-        # Query the minimum, average and maximum temperature from start date to the most recent date
-        start_data = session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
+        # Query the data from start date to the most recent date
+        start_data = session.query(*sel).\
                             filter(Measurement.date >= start).all()
         # Convert list of tuples into normal list
         start_list = list(np.ravel(start_data))
@@ -136,8 +139,8 @@ def cal_temp(start, end=None):
         # Return a list of jsonified minimum, average and maximum temperatures for a specific start date
         return jsonify(start_list)
     else:
-        # Query the minimum, average and maximum temperature from start date to the end date
-        start_end_data = session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
+        # Query the data from start date to the end date
+        start_end_data = session.query(*sel).\
                             filter(Measurement.date >= start).\
                             filter(Measurement.date <= end).all()
         # Convert list of tuples into normal list
