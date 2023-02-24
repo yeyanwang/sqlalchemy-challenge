@@ -3,7 +3,7 @@
 The `SurfsUp` directory contains `climate.ipynb` Jupyter Notebook, the `app.py` Python script, and a `Resources` folder which contains the `hawaii.sqlite` database, `hawaii_measurements.csv` and `hawaii_stations.csv`.
 
 ### Analyze and Explore the Climate Data
-Climate analysis and data exploration was done on the `hawaii.sqlite` database. The `climate.ipynb` Jupyter Notebook was created to perform precipitation analysis and station analysis. The `app.py` Python script was created to design climate app with a Flask API with 5 routes with JSON lists of climate information. 
+Climate analysis and data exploration was done on the `hawaii.sqlite` database. The `climate.ipynb` Jupyter Notebook was created to perform precipitation analysis and station analysis. The `app.py` Python script was created to design a climate app with a Flask API with 5 routes with JSON lists of climate information. 
 
 **Precipitation Analysis**
 * ORM queries were done to get the date and prcp data for the previous 12 months.
@@ -30,7 +30,7 @@ Climate analysis and data exploration was done on the `hawaii.sqlite` database. 
   |75%	          | 0.130000      |
   |max	          | 6.700000      |
 
-* A summary statistics table were printed for the precipitation data for the previous 12 months.
+* A summary statistics table was printed for the precipitation data for the previous 12 months.
 ![image](https://user-images.githubusercontent.com/120543690/221071429-98f38337-cdee-4bfc-908a-b159c9794587.png)
 
 **Station Analysis**
@@ -46,9 +46,9 @@ Climate analysis and data exploration was done on the `hawaii.sqlite` database. 
  ('USC00517948', 1372),
  ('USC00518838', 511)]
  ```
-* The minimum, average and maximum temperature data were queried for the most_active station (by id)
+* The minimum, average and maximum temperature data were queried for the most active station (by id)
 
-* The last 12 months of temperature observation data for the most-active station were queried
+* The last 12 months of temperature observation data for the most active station were queried
   |      | tobs |
   | ---- |:----:|
   |0     | 77.0 |
