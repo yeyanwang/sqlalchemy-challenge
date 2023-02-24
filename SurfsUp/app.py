@@ -125,6 +125,7 @@ def cal_temp(start, end=None):
     # Create the session
     session = Session(engine)
     
+    # Check if there is an end date then do the task accordingly
     if end == None: 
         # Query the minimum, average and maximum temperature from start date to the most recent date
         start_data = session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
@@ -144,6 +145,7 @@ def cal_temp(start, end=None):
 
         # Return a list of jsonified minimum, average and maximum temperatures for a specific start-end date range
         return jsonify(start_end_list)
+
     # Close the session                   
     session.close()
     
