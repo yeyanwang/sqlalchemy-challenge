@@ -125,7 +125,7 @@ def cal_temp(start=None, end=None):
     # Create the session
     session = Session(engine)
     
-    # Make a list for the minimum, average and maximum temperature
+    # Make a list to query (the minimum, average and maximum temperature)
     sel=[func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)]
     
     # Check if there is an end date then do the task accordingly
