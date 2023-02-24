@@ -118,7 +118,7 @@ def tobs():
     # Return a list of jsonified tobs data for the previous 12 months
     return jsonify(tobs_list)
 
-# Define what to do when the user hits the URL with a specific start date
+# Define what to do when the user hits the URL with a specific start date or start-end range
 @app.route("/api/v1.0/<start>")
 @app.route("/api/v1.0/<start>/<end>")
 def cal_temp(start, end=None):
