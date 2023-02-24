@@ -120,43 +120,33 @@ def tobs():
 
 # Define what to do when the user hits the URL with a specific start date
 @app.route("/api/v1.0/<start>")
-def cal_temp(start):
-    # Create the session
-    session = Session(engine)
-
-    # Query the minimum, average and maximum temperature from start date to the most recent date
-    start_data = session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
-                        filter(Measurement.date >= start).all()
-
-    # Close the session                   
-    session.close()
-
-    # Convert list of tuples into normal list
-    start_list = list(np.ravel(start_data))
-
-    # Return a list of jsonified minimum, average and maximum temperatures for a specific start date
-    return jsonify(start_list)
-
-# Define what to do when the user hits the URL with a specific start-end date range 
 @app.route("/api/v1.0/<start>/<end>")
-def cal_temp_2(start, end):
+def cal_temp(start, end=None):
     # Create the session
     session = Session(engine)
+    
+    if end == None: 
+        # Query the minimum, average and maximum temperature from start date to the most recent date
+        start_data = session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
+                            filter(Measurement.date >= start).all()
+        # Convert list of tuples into normal list
+        start_list = list(np.ravel(start_data))
 
-    # Query the minimum, average and maximum temperature from start date to the end date
-    start_end_data = session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
+        # Return a list of jsonified minimum, average and maximum temperatures for a specific start date
+        return jsonify(start_list)
+    else:
+        # Query the minimum, average and maximum temperature from start date to the end date
+        start_end_data = session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
                             filter(Measurement.date >= start).\
                             filter(Measurement.date <= end).all()
+        # Convert list of tuples into normal list
+        start_end_list = list(np.ravel(start_end_data))
 
+        # Return a list of jsonified minimum, average and maximum temperatures for a specific start-end date range
+        return jsonify(start_end_list)
     # Close the session                   
     session.close()
-
-    # Convert list of tuples into normal list
-    start_end_list = list(np.ravel(start_end_data))
-
-    # Return a list of jsonified minimum, average and maximum temperatures for a specific start-end date range
-    return jsonify(start_end_list)
-
+    
 # Define main branch 
 if __name__ == "__main__":
     app.run(debug = True)
