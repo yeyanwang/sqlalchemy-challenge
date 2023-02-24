@@ -59,9 +59,6 @@ def precipitation():
     # Create the session
     session = Session(engine)
 
-    # Call the prev_year function
-    date_prev_year()
-
     # Query precipitation data from last 12 months from the most recent date from Measurement table
     prcp_data = session.query(Measurement.date, Measurement.prcp).filter(Measurement.date >= date_prev_year()).all()
     
@@ -102,9 +99,6 @@ def stations():
 def tobs():
     # Create our session
     session = Session(engine)
-
-    # Call the prev_year function
-    date_prev_year()
 
     # Query tobs data from last 12 months from the most recent date from Measurement table
     tobs_data = session.query(Measurement.date, Measurement.tobs).filter(Measurement.station == 'USC00519281').\
