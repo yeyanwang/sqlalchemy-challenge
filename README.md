@@ -19,6 +19,11 @@ Climate analysis and data exploration was done on the `hawaii.sqlite` database. 
   |...	      | ...           |
 
 * The results were plotted by using the Pandas plot method.
+
+![image](https://user-images.githubusercontent.com/120543690/221071429-98f38337-cdee-4bfc-908a-b159c9794587.png)
+
+* A summary statistics table was printed for the precipitation data for the previous 12 months.
+
 	|               | precipitation |
   | ------------- |:-------------:|
   |count	        | 2021.000000   |
@@ -29,9 +34,6 @@ Climate analysis and data exploration was done on the `hawaii.sqlite` database. 
   |50%	          | 0.020000      |
   |75%	          | 0.130000      |
   |max	          | 6.700000      |
-
-* A summary statistics table was printed for the precipitation data for the previous 12 months.
-![image](https://user-images.githubusercontent.com/120543690/221071429-98f38337-cdee-4bfc-908a-b159c9794587.png)
 
 **Station Analysis**
 * All stations and its number of counts were listed in descending order.
