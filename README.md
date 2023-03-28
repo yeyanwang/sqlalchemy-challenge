@@ -2,7 +2,7 @@
 
 The `SurfsUp` directory contains `climate.ipynb` Jupyter Notebook, the `app.py` Python script, and a `Resources` folder which contains the `hawaii.sqlite` database, `hawaii_measurements.csv` and `hawaii_stations.csv`.
 
-### Analyze and Explore the Climate Data
+## Analyze and Explore the Climate Data
 Climate analysis and data exploration was done on the `hawaii.sqlite` database. The `climate.ipynb` Jupyter Notebook was created to perform precipitation analysis and station analysis. The `app.py` Python script was created to design a climate app with a Flask API with 5 routes with JSON lists of climate information. 
 
 **Precipitation Analysis**
@@ -20,7 +20,7 @@ Climate analysis and data exploration was done on the `hawaii.sqlite` database. 
 
 * The results were plotted by using the Pandas plot method.
 
-![image](https://user-images.githubusercontent.com/120543690/221071429-98f38337-cdee-4bfc-908a-b159c9794587.png)
+	![image](https://user-images.githubusercontent.com/120543690/221071429-98f38337-cdee-4bfc-908a-b159c9794587.png)
 
 * A summary statistics table was printed for the precipitation data for the previous 12 months.
 
@@ -61,9 +61,9 @@ Climate analysis and data exploration was done on the `hawaii.sqlite` database. 
   |...   | ...  |
 
 * The results were binned and plotted in histogram using Pandas plot histogram method. 
-![image](https://user-images.githubusercontent.com/120543690/221074591-79dc85f6-102a-40aa-8bd2-75f80ab42ce6.png)
+	![image](https://user-images.githubusercontent.com/120543690/221074591-79dc85f6-102a-40aa-8bd2-75f80ab42ce6.png)
 
-### Design Climate API
+## Design Climate API
 A Climate API was created using Flask. The following 5 routes are available routes created using Flask:
 1. `/`(Homepage)
 - Start at the homepage.
